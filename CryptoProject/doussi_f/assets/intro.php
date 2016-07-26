@@ -8,6 +8,10 @@
 // Started on  Tue Jul 26 11:31:02 2016 DOUSSIN Florian
 // Last update Tue Jul 26 11:31:05 2016 DOUSSIN Florian
 //
+function pause($seconds)
+{
+    usleep($seconds * 1000000);
+}
 echo "     _________                      _____            \n";
 echo "     __  ____/___________  ___________  /______      \n";
 echo "     _  /    __  ___/_  / / /__  __ \  __/  __ \     \n";
@@ -20,5 +24,15 @@ echo "     __  /_/ /_  ___/  __ \____  /_  _ \  ___/  __/  \n";
 echo "     _  ____/_  /   / /_/ /___  / /  __/ /__ / /_    \n";
 echo "     /_/     /_/    \____/___  /  \___/\___/ \__/    \n";
 echo "                          /___/                      \n";
+pause(0.6);
 echo "Bien le bonjour chers amis.\n";
+pause(0.6);
+echo "Appuyez sur 1, 2 ou 3 en fonction de votre choix.\n";
+pause(0.6);
+echo "Que voulez-vous faire ?\n";
+pause(0.6);
+echo "1. Génération d'une clé publique\n";
+echo "2. Chiffrement d'un message\n";
+echo "3. Déchiffrement d'un message\n";
+echo "Entrez \"exit\" pour quitter le programme\n";
 ?>
