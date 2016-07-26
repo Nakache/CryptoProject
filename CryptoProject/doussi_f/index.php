@@ -8,7 +8,7 @@
 // Started on  Tue Jul 26 10:37:02 2016 DOUSSIN Florian
 // Last update Tue Jul 26 10:37:30 2016 DOUSSIN Florian
 //
-require_once('./intro.php');
+require_once('./assets/intro.php');
 $line = "";
 while (trim($line) != "exit")
   {
@@ -17,13 +17,13 @@ while (trim($line) != "exit")
     $line = fgets($file);
     $params = split(" ", trim($line));
     
-    if ($params[0] == "echo")
+    if ($params[0] == "1")
       echo "echo\n";
     
-    else if ($params[0] == "cat")
+    else if ($params[0] == "2")
       echo "cat\n";
     
-    else if ($params[0] == "pwd")
+    else if ($params[0] == "3")
       echo "pwd\n";
     
     else
