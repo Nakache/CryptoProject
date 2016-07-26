@@ -27,7 +27,7 @@ echo "                          /___/                      \n";
 pause(0.6);
 echo "Bien le bonjour chers amis.\n";
 pause(0.6);
-echo "Appuyez sur 1, 2 ou 3 en fonction de votre choix.\n";
+echo "Appuyez sur 1, 2 ou 3 en fonction de votre choix puis validez en appuyant sur Entrer.\n";
 pause(0.6);
 echo "Que voulez-vous faire ?\n";
 pause(0.6);
