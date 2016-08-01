@@ -11,6 +11,9 @@ function pause($seconds)
 {
     usleep($seconds * 1000000);
 }
+
+function launch()
+{
 echo "     _________                      _____            \n";
 echo "     __  ____/___________  ___________  /______      \n";
 echo "     _  /    __  ___/_  / / /__  __ \  __/  __ \     \n";
@@ -34,4 +37,5 @@ echo "1. Génération d'une clé publique\n";
 echo "2. Chiffrement d'un message\n";
 echo "3. Déchiffrement d'un message\n";
 echo "Entrez \"exit\" pour quitter le programme\n";
+}
 ?>
