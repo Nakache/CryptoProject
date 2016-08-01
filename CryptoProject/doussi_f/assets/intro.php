@@ -1,4 +1,3 @@
-#!/usr/bin/env php
 <?php
 // intro.php for  in /Users/Florian/Desktop/CryptoProject
 // 

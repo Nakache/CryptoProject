@@ -1,4 +1,3 @@
-#!/usr/bin/env php
 <?php
 // index.php for  in /Users/Florian/Desktop/CryptoProject
 // 
@@ -17,14 +16,18 @@ while (trim($line) != "exit")
     $line = fgets($file);
     $params = split(" ", trim($line));
     
-    if ($params[0] == "1")
+    if ($params[0] == "1") {
       echo "Vous avez choisi l'option Génération d'une clé publique\n";
+      require_once('./assets/option1.php');
+    }
     
-    else if ($params[0] == "2")
+    else if ($params[0] == "2") {
       echo "Vous avez choisi l'option Chiffrement d'un message\n";
+    }
     
-    else if ($params[0] == "3")
+    else if ($params[0] == "3") {
       echo "Vous avez choisi l'option Déchiffrement d'un message\n";
+    }
     
     else
       if ($params[0] !== "exit"){
