@@ -10,5 +10,7 @@
 
 echo "Pour générer une clé publique, il vous faut rentrer une suite super croissante\n";
 echo "Entrez votre suite :\n";
+ if($S est  supercroissante){
 
+ }
 ?>
