@@ -7,7 +7,7 @@
 // Started on  Tue Jul 26 10:37:02 2016 DOUSSIN Florian
 // Last update Tue Jul 26 14:30:24 2016 DOUSSIN Florian
 //
-require_once('./assets/intro.php');
+require_once('./src/intro.php');
 $line = "";
 while (trim($line) != "exit")
   {
@@ -18,7 +18,7 @@ while (trim($line) != "exit")
     
     if ($params[0] == "1") {
       echo "Vous avez choisi l'option Génération d'une clé publique\n";
-      require_once('./assets/option1.php');
+      require_once('./src/option1.php');
     }
     
     else if ($params[0] == "2") {
