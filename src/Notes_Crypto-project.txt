@@ -1,0 +1,77 @@
+Notes pour le Crypto-project:
+
+super croissante: Une suite dont chaque nombre précédent est plus petit que le suivant,
+par ex:
+1,2,4,8,16,32,64,128;255...
+c'est la clé secrete S.
+
+-----------------------------------
+
+e et m
+
+m: doit etre supérieure à l'addition de tous les termes de S exemple:
+m = 511
+
+e doit etre inférieure à m mais supérieure à 1 ex:
+e = 2;
+
+de plus e et m doivent être premiers entre eux CAD que 511 et 2 doivent avoir le plus grand diviseur commun ici 1 ou 256 je sais pas trop... bref ils sont premiers.
+
+-----------------------------------
+
+une clé publique S' à partie de S, e et m qui utilise le retour du modulo:
+
+function my_modulo($int, $n)
+{
+  if(is_int($int) && is_int($n) && is_numeric($int) && $n != 0){
+    $result = $int - (floor($int/$n)*$n);
+    return ($result);
+  }
+  else {
+    echo "va t'acheter des doigts !\n";
+    return ($int);
+  }
+}
+
+-----------------------------------
+
+chiffrer le message grace à S':
+
+transformer l'ascii en binaire: http://php.net/manual/fr/function.decbin.php
+
+
+
+-----------------------------------
+
+
+Déchiffrer le message à l'aide de S(la clé secrette) grave à inv_modulaire:
+
+function my_modulo($int, $n)
+{
+  if(is_int($int) && is_int($n) && is_numeric($int) && $n != 0){
+    $result = $int - (floor($int/$n)*$n);
+    return ($result);
+  }
+  else {
+    echo "va t'acheter des doigts !\n";
+    return ($int);
+  }
+}
+
+function inv_modulo($a, $n)
+{
+  if(is_int($a) && is_int($n) && $n != 0){
+  	for($u = 0; $u <= $n; $u++){
+  		$multipl = $a * $u;
+  		if(my_modulo($multipl, $n) == 1){
+  			return $u;
+  		}
+  	}
+  	echo "va t'acheter des doigts !\n";
+  	return 0;
+  }
+  echo "va t'acheter des doigts !\n";
+    return 0;
+}
+
+-----------------------------------
