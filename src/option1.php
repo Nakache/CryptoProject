@@ -10,7 +10,12 @@
 
 echo "Pour générer une clé publique, il vous faut rentrer une suite super croissante\n";
 echo "Entrez votre suite :\n";
- if($S est  supercroissante){
 
- }
+$stdin = fopen("php://stdin", "r");
+fscanf(STDIN, "%s\n", $entry);
+echo "CA ME RENVOIE CE QUE JE RENTRE " . $entry . "\n";
+
+$cut = explode(",", $entry);
+echo "ET LA LE 1ER ARGUMENT DU TAB " . $cut[0] . "\n";
+echo "ET LA LE 4E " . $cut[3];
 ?>
