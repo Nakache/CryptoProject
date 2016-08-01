@@ -9,7 +9,6 @@
 //
 
 echo "Pour générer une clé publique, il vous faut rentrer une suite super croissante\n";
-echo "Vous devrez la rentrer sous la forme X, X, X, X, X\n";
-echo "À vous de jouer ! :\n";
+echo "Entrez votre suite :\n";
 
 ?>
