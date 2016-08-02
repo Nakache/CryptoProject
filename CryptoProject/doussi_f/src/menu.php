@@ -23,6 +23,7 @@ while (trim($line) != "exit")
     if ($params[0] == "1") {
       echo "Vous avez choisi l'option Génération d'une clé publique\n";
       require_once('option1.php');
+      //public_key($s,$e,$m);
     }
     
     else if ($params[0] == "2") {
