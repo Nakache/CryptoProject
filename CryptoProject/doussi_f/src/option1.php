@@ -19,17 +19,37 @@
 // echo "ET LA LE 1ER ARGUMENT DU TAB " . $cut[0] . "\n";
 // echo "ET LA LE 4E " . $cut[3];
 
-function public_key($s,$e,$m){
- if(true){
- 	for ($i=0; $i != count($S); $i++) {
- 		echo($S);
- 		echo($e);
- 		echo($m);
- 		//$S[$i]
- 	}
- }
+function my_modulo($int, $n)
+{
+  if(is_int($int) && is_int($n) && is_numeric($int) && $n != 0){
+    $result = $int - (floor($int/$n)*$n);
+    return ($result);
+  }
+  else {
+    echo "va t'acheter des doigts !\n";
+    return ($int);
+  }
 }
 
-$S = [1,2,4,8,16,32,64,128,256];
-public_key($S, 512, 2);
+function public_key($s,$e,$m){
+ $a=[];
+ if(true){
+ 	for ($i=0; $i != count($s); $i++) {
+ 		//echo("Le tableau est égale à: ".$s[$i]."\n");
+ 		$b = $s[$i]*$e;
+ 		//echo("Le calcul est égale à: ".$b."\n");
+ 		$c = my_modulo($b,$m);
+ 		//echo("so  modulo est égale à: ".$c."\n");
+ 		array_push($a, $c);
+ 		sort($a);
+ 			}
+ 		}
+	foreach ($a as $value) {
+    $p = $p.$value.",";
+}
+echo substr($p, 0, -1)."\n";
+}
+
+$S = [1,2,5,10,20,50,100,200];
+public_key($S, 255, 512);
 ?>
