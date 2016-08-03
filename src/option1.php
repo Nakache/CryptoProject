@@ -8,23 +8,35 @@
 // Last update Thu Jul 28 10:52:20 2016 DOUSSIN Florian
 //
 
-// echo "Pour générer une clé publique, il vous faut rentrer une suite super croissante\n";
-// echo "Entrez votre suite :\n";
+echo "Pour générer une clé publique, il vous faut rentrer une suite super croissante\n";
+echo "Entrez votre suite :\n";
 
-// function get_str() {
-// $stdin = fopen("php://stdin", "r");
-// fscanf(STDIN, "%s\n", $entry);
-// echo "CA ME RENVOIE CE QUE JE RENTRE " . $entry . "\n";
 
-// $cut = explode(",", $entry);
-// echo "ET LA LE 1ER ARGUMENT DU TAB " . $cut[0] . "\n";
-// echo "ET LA LE 4E " . $cut[3] . "\n";
-// }
+function check_suite($cut) {
+	$temp = 0;
+	for ($i=0; $i != count($cut); $i++) { 
+		if ($temp < $cut[$i]) {
+			$temp = $temp + $cut[$i];
+		}
+		else {
+			return 0;
+		}
+	}
+	return 1;
+}
 
-// function check_suite() {
-//   get_str();
+function get_str() {
+	$stdin = fopen("php://stdin", "r");
+	fscanf(STDIN, "%s\n", $entry);
+	echo "CA ME RENVOIE CE QUE JE RENTRE " . $entry . "\n";
 
-// }
+	$cut = explode(",", $entry);
+	echo "ET LA LE 1ER ARGUMENT DU TAB " . $cut[0] . "\n";
+	echo "ET LA LE 4E " . $cut[3] . "\n";
+
+	check_suite($cut);
+}
+
 
 function my_modulo($int, $n)
 {
@@ -69,11 +81,11 @@ function public_key($s,$e,$m){
 	// print_r($tbl_non_trier);
 	// print_r($d);
 	// print_r($tbl_trier);
-echo "P : ".substr($p, 0, -1)."\n";
-echo "Clé publique : ".substr($t, 0, -1)."\n";
+	echo "P : ".substr($p, 0, -1)."\n";
+	echo "Clé publique : ".substr($t, 0, -1)."\n";
 }
 
-//check_suite();
-$S = [1,2,5,10,20,50,100,200];
-public_key($S, 255, 512);
+get_str();
+// $S = [1,2,5,10,20,50,100,200];
+// public_key($S, 255, 512);
 ?>
