@@ -11,7 +11,7 @@
 // echo "Pour générer une clé publique, il vous faut rentrer une suite super croissante\n";
 // echo "Entrez votre suite :\n";
 
-
+//Vérifie si c'est une suite croissante
 function check_suite($cut) {
 	$temp = 0;
 	for ($i=0; $i != count($cut); $i++) { 
@@ -25,6 +25,7 @@ function check_suite($cut) {
 	return 1;
 }
 
+//Récupère l'entrée de la suite, et transforme en Tableau
 function get_str() {
 	$stdin = fopen("php://stdin", "r");
 	fscanf(STDIN, "%s\n", $entry);
@@ -35,7 +36,7 @@ function get_str() {
 	return $cut;
 }
 
-
+// Modulo
 function my_modulo($int, $n)
 {
 	if(is_int($int) && is_int($n) && is_numeric($int) && $n != 0){
@@ -48,6 +49,7 @@ function my_modulo($int, $n)
 	}
 }
 
+//Transformation en clé publique
 function public_key($s,$e,$m){
 	$tbl_trier=[];
 	$tbl_non_trier=[];
@@ -83,5 +85,5 @@ function public_key($s,$e,$m){
 	echo "Clé publique : ".substr($t, 0, -1)."\n";
 }
  //$S = get_str();
- // public_key(get_str(), 255, 512);
+ 	public_key(get_str(), 255, 512);
 ?>
