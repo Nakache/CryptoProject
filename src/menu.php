@@ -8,7 +8,14 @@
 // Last update Tue Jul 26 14:30:24 2016 DOUSSIN Florian
 //
 require_once('intro.php');
+require_once('option1.php');
  launch();
+
+// function recup()
+// {
+//   $stdin = fopen("php://stdin", "r");
+//   fscanf(STDIN, "%s\n", $entry);
+// }
 
 function choice()
 {
@@ -22,7 +29,16 @@ while (trim($line) != "exit")
     
     if ($params[0] == "1") {
       echo "Vous avez choisi l'option Génération d'une clé publique\n";
-      require_once('option1.php');
+      echo "Veuillez entrer la suite supercroissante : \n";
+      $first = get_entry();
+      echo "Veuillez entrer E";
+      // recup();
+      // $vare = $entry;
+      echo "Veuillez entrer M";
+      // recup();
+      // $varm = $entry;
+      // echo $vare;
+      // echo $varm;
       //public_key($s,$e,$m);
     }
     
