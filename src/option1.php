@@ -12,6 +12,8 @@
 // echo "Entrez votre suite :\n";
 
 //Vérifie si c'est une suite croissante
+require_once ('./src/resources.php');
+
 function check_suite($cut) {
 	$temp = 0;
 	for ($i=0; $i != count($cut); $i++) { 
@@ -25,32 +27,18 @@ function check_suite($cut) {
 	return 1;
 }
 
-//Récupère l'entrée de la suite, et transforme en Tableau
-function get_str() {
-	$stdin = fopen("php://stdin", "r");
-	fscanf(STDIN, "%s\n", $entry);
-	// echo "CA ME RENVOIE CE QUE JE RENTRE " . $entry . "\n";
-	$cut = explode(",", $entry);
-	// echo "ET LA LE 1ER ARGUMENT DU TAB " . $cut[0] . "\n";
-	// echo "ET LA LE 4E " . $cut[3] . "\n";
-	return $cut;
-}
-
-// Modulo
-function my_modulo($int, $n)
-{
-	if(is_int($int) && is_int($n) && is_numeric($int) && $n != 0){
-		$result = $int - (floor($int/$n)*$n);
-		return ($result);
-	}
-	else {
-		echo "va t'acheter des doigts !\n";
-		return ($int);
-	}
-}
-
 //Transformation en clé publique
-function public_key($s,$e,$m){
+function public_key(){
+echo "Veuillez entrer une suite super croissante\n";
+fscanf(STDIN, "%s\n", $suite);
+echo "Veuillez entrer le nombre e\n";
+fscanf(STDIN, "%s\n", $nbr);
+echo "Veuillez entrer votre nombre m\n";
+fscanf(STDIN, "%s\n", $mumber);
+
+	$s = explode(",", $suite);
+	$e = intval($nbr);
+	$m = intval($mumber);
 	$tbl_trier=[];
 	$tbl_non_trier=[];
 	$d=[];
@@ -78,12 +66,7 @@ function public_key($s,$e,$m){
 	for ($i=0; $d[$i]; $i++) { 
 		$p = $p.$d[$i].",";
 	}
-	// print_r($tbl_non_trier);
-	// print_r($d);
-	// print_r($tbl_trier);
 	echo "P : ".substr($p, 0, -1)."\n";
 	echo "Clé publique : ".substr($t, 0, -1)."\n";
 }
- //$S = get_str();
- 	public_key(get_str(), 255, 512);
 ?>

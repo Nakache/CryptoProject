@@ -9,7 +9,9 @@
 //
 require_once('intro.php');
 require_once('option1.php');
- launch();
+require_once('option2.php');
+require_once('option3.php');
+launch();
 
 function choice()
 {
@@ -22,18 +24,15 @@ while (trim($line) != "exit")
     $params = split(" ", trim($line));
     
     if ($params[0] == "1") {
-      echo "Vous avez choisi l'option Génération d'une clé publique\n";
-      echo "Veuillez entrer la suite supercroissante : \n";
-      //$first = get_entry();
-      //public_key($s,$e,$m);
+      public_key();
     }
     
     else if ($params[0] == "2") {
-      echo "Vous avez choisi l'option Chiffrement d'un message\n";
+      chiffrage();
     }
     
     else if ($params[0] == "3") {
-      echo "Vous avez choisi l'option Déchiffrement d'un message\n";
+      decypher();
     }
     
     else
@@ -47,6 +46,11 @@ while (trim($line) != "exit")
     if ($params[0] == "exit"){
       echo "À bientôt !\n";
     }
+     echo "Que voulez-vous faire ?\n";
+      echo "1. Génération d'une clé publique\n";
+      echo "2. Chiffrement d'un message\n";
+      echo "3. Déchiffrement d'un message\n";
+      echo "Entrez \"exit\" pour quitter le programme\n";
   }
 }
 ?>

@@ -1,15 +1,5 @@
 <?php
-function my_modulo($int, $n)
-{
-	if(is_int($int) && is_int($n) && is_numeric($int) && $n != 0){
-		$result = $int - (floor($int/$n)*$n);
-		return ($result);
-	}
-	else {
-		echo "va t'acheter des doigts !\n";
-		return ($int);
-	}
-}
+require_once ('./src/resources.php');
 
  function chiffrage(){
 
@@ -51,5 +41,3 @@ function cypher($split, $cle, $n){
 	}
 echo "Le message crypté est : ".substr($s, 0,-1)."\n";
 }
-
-chiffrage();
