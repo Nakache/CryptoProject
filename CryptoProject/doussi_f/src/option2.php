@@ -1,6 +1,4 @@
 <?php
-
-
 function my_modulo($int, $n)
 {
 	if(is_int($int) && is_int($n) && is_numeric($int) && $n != 0){
@@ -18,6 +16,8 @@ function my_modulo($int, $n)
 $stdin = fopen("php://stdin", "r");
 echo "Veuillez entrer votre texte à crypter\n";
 fscanf(STDIN, "%s\n", $entry);
+echo "Veuillez entrer la clé de chiffrement\n";
+fscanf(STDIN, "%s\n", $cle);
 echo "Veuillez entrer le nombre n\n";
 fscanf(STDIN, "%s\n", $n);
 
@@ -32,14 +32,24 @@ for ($rest; $rest != $n ; $rest++) {
 	$line = $line."0";
 	}
 	$split = str_split($line, $n);
-	var_dump($split);
-	cypher($split);
+	//var_dump($split);
+	cypher($split, $cle, $n);
 }
 
-function cypher($split){
-	for ($i=0; $split[$i] ; $i++) { 
-		echo($split[$i]);
+function cypher($split, $cle, $n){
+	$tab = [];
+	$exp = explode(",", $cle);
+	array_splice($exp, $n);
+	$n--;
+	for ($i=0; $split[$i] ; $i++) {
+		for ($j=0; $split[$i][$j] != ''; $j++) {
+			if ($split[$i][$j] == "1") {
+				$tab[$i] += $exp[$n - $j];
+			}
+		}
+		$s .= $tab[$i].",";
 	}
+echo "Le message crypté est : ".substr($s, 0,-1)."\n";
 }
 
 chiffrage();
