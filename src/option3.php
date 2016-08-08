@@ -85,5 +85,3 @@ for ($g=0; $g != count($exp) ; $g++) {
 }
 echo("\n");
 }
-
-decypher();

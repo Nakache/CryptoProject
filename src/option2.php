@@ -6,7 +6,7 @@ require_once ('./src/resources.php');
 $stdin = fopen("php://stdin", "r");
 echo "Veuillez entrer votre texte à crypter\n";
 fscanf(STDIN, "%s\n", $entry);
-echo "Veuillez entrer la clé de chiffrement\n";
+echo "Veuillez entrer la clé publique\n";
 fscanf(STDIN, "%s\n", $cle);
 echo "Veuillez entrer le nombre n\n";
 fscanf(STDIN, "%s\n", $n);
@@ -22,7 +22,6 @@ for ($rest; $rest != $n ; $rest++) {
 	$line = $line."0";
 	}
 	$split = str_split($line, $n);
-	//var_dump($split);
 	cypher($split, $cle, $n);
 }
 

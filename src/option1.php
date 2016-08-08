@@ -5,14 +5,14 @@
 // Login   <doussi_f@etna-alternance.net>
 // 
 // Started on  Thu Jul 28 10:52:18 2016 DOUSSIN Florian
-// Last update Thu Jul 28 10:52:20 2016 DOUSSIN Florian
+// Last update Sun Aug  7 21:15:55 2016 Nakache Thomas
 //
 
 // echo "Pour générer une clé publique, il vous faut rentrer une suite super croissante\n";
 // echo "Entrez votre suite :\n";
 
 //Vérifie si c'est une suite croissante
-require_once ('./src/resources.php');
+require_once ('resources.php');
 
 function check_suite($cut) {
 	$temp = 0;
