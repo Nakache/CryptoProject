@@ -1,4 +1,12 @@
 <?php
+// option2.php for  in /Users/Florian/Desktop/CryptoProject/src
+// 
+// Made by DOUSSIN Florian
+// Login   <doussi_f@etna-alternance.net>
+// 
+// Started on  Fri Aug 12 16:42:44 2016 DOUSSIN Florian
+// Last update Fri Aug 12 16:42:48 2016 DOUSSIN Florian
+//
 require_once ('resources.php');
 require_once ('menu.php');
 echo "Vous avez choisi l'option Chiffement d'un message\n\n";

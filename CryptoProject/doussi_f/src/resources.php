@@ -1,4 +1,12 @@
 <?php
+// resources.php for  in /Users/Florian/Desktop/CryptoProject/src
+// 
+// Made by DOUSSIN Florian
+// Login   <doussi_f@etna-alternance.net>
+// 
+// Started on  Fri Aug 12 16:41:53 2016 DOUSSIN Florian
+// Last update Fri Aug 12 16:41:58 2016 DOUSSIN Florian
+//
 function my_modulo($int, $n)
 {
   if(is_int($int) && is_int($n) && is_numeric($int) && $n != 0){
