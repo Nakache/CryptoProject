@@ -1,6 +1,7 @@
 <?php
 require_once ('resources.php');
 require_once ('menu.php');
+echo "Vous avez choisi l'option Chiffement d'un message\n\n";
 
  function chiffrage(){
 
