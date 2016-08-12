@@ -2,7 +2,7 @@
 require_once ('resources.php');
 require_once ('menu.php');
 
-function decypher(){
+function recup_decypher() {
 	echo "Veuillez entrer le nombre e\n";
 	fscanf(STDIN, "%s\n", $nbr);
 	echo "Veuillez entrer votre nombre m\n";
@@ -15,7 +15,10 @@ function decypher(){
 	fscanf(STDIN, "%s\n", $secret);
 	echo "Veuillez entrer la clé secrete n\n";
 	fscanf(STDIN, "%s\n", $ainne);
+}
 
+function decypher() {
+	recup_decypher();
 	$p = explode(",", $permut);
 	$msg = explode(",", $cyphe);
 	$v = explode(",", $secret);
@@ -25,7 +28,6 @@ function decypher(){
 	$d = inv_modulo($e,$m);
 	$tab = [];
 	$tbl2 = [];
-
 	for ($i=0; $i != count($msg) ; $i++) { 
 		$reslt = my_modulo($msg[$i]*$d, $m);
 		array_push ($tab, $reslt);
@@ -36,7 +38,6 @@ function decypher(){
 		intval($v[$k]);
 		array_push($tbl2, $v[$k]);
 	}
-
 	$tri = [];
 	for ($y=0; $y != $n +1 ; $y++) { 
 		for ($pu=0; $pu != count($p) ; $pu++) {
@@ -74,15 +75,15 @@ for ($i=0; $i != $o ; $i++) { // parcourir $rslt
 	 		}
 	 	}
 	 }
-}
+	}
 
-$deux = my_modulo(strlen($mpns),8);
-$mpns = substr($mpns, 0, -$deux);
+	$deux = my_modulo(strlen($mpns),8);
+	$mpns = substr($mpns, 0, -$deux);
 
-$exp = str_split($mpns, 8);
-for ($g=0; $g != count($exp) ; $g++) { 
-	echo(chr(bindec($exp[$g])));
-}
-echo("\n");
-affchoice();
+	$exp = str_split($mpns, 8);
+	for ($g=0; $g != count($exp) ; $g++) { 
+		echo(chr(bindec($exp[$g])));
+	}
+	echo("\n");
+	affchoice();
 }
