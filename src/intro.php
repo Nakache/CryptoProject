@@ -27,7 +27,7 @@ echo "     _  ____/_  /   / /_/ /___  / /  __/ /__ / /_    \n";
 echo "     /_/     /_/    \____/___  /  \___/\___/ \__/    \n";
 echo "                          /___/                      \n";
 pause(0.6);
-echo "Bien le bonjour chers amis.\n";
+echo "Bien le bonjour chers amis. Avez-vous pensé à lire le mode d'emploi fourni avec ?\n";
 pause(0.6);
 echo "Appuyez sur 1, 2 ou 3 en fonction de votre choix puis validez en appuyant sur Entrer.\n";
 pause(0.6);

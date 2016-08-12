@@ -1,6 +1,6 @@
 <?php
-require_once ('./src/resources.php');
-
+require_once ('resources.php');
+require_once ('menu.php');
 
 function decypher(){
 	echo "Veuillez entrer le nombre e\n";
@@ -84,4 +84,5 @@ for ($g=0; $g != count($exp) ; $g++) {
 	echo(chr(bindec($exp[$g])));
 }
 echo("\n");
+affchoice();
 }

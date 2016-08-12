@@ -13,44 +13,40 @@ require_once('option2.php');
 require_once('option3.php');
 launch();
 
-function choice()
+function affchoice()
 {
-$line = "";
-while (trim($line) != "exit")
-  {
-    echo "> ";
-    $file = fopen("php://stdin", "r");
-    $line = fgets($file);
-    $params = split(" ", trim($line));
-    
-    if ($params[0] == "1") {
-      public_key();
-    }
-    
-    else if ($params[0] == "2") {
-      chiffrage();
-    }
-    
-    else if ($params[0] == "3") {
-      decypher();
-    }
-    
-    else
-      if ($params[0] !== "exit"){
       echo "Que voulez-vous faire ?\n";
       echo "1. Génération d'une clé publique\n";
       echo "2. Chiffrement d'un message\n";
       echo "3. Déchiffrement d'un message\n";
       echo "Entrez \"exit\" pour quitter le programme\n";
-      }
-    if ($params[0] == "exit"){
-      echo "À bientôt !\n";
+      choice();
+}
+
+function choice()
+{
+    fscanf(STDIN, "%s\n", $entree);
+    echo "> ";
+    if ($entree == "1") {
+      public_key();
     }
-     echo "Que voulez-vous faire ?\n";
+    else if ($entree == "2") {
+      chiffrage();
+    }
+    else if ($entree == "3") {
+      decypher();
+    }
+    else
+      if ($entree !== "exit"){
+      echo "Que voulez-vous faire ?\n";
       echo "1. Génération d'une clé publique\n";
       echo "2. Chiffrement d'un message\n";
       echo "3. Déchiffrement d'un message\n";
       echo "Entrez \"exit\" pour quitter le programme\n";
-  }
+      choice();
+      }
+    if ($entree == "exit"){
+      echo "À bientôt !\n";
+    }
 }
 ?>

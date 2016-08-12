@@ -8,33 +8,17 @@
 // Last update Sun Aug  7 21:15:55 2016 Nakache Thomas
 //
 
-// echo "Pour générer une clé publique, il vous faut rentrer une suite super croissante\n";
-// echo "Entrez votre suite :\n";
-
 //Vérifie si c'est une suite croissante
 require_once ('resources.php');
 
-function check_suite($cut) {
-	$temp = 0;
-	for ($i=0; $i != count($cut); $i++) { 
-		if ($temp < $cut[$i]) {
-			$temp = $temp + $cut[$i];
-		}
-		else {
-			return 0;
-		}
-	}
-	return 1;
-}
-
 //Transformation en clé publique
 function public_key(){
-echo "Veuillez entrer une suite super croissante\n";
-fscanf(STDIN, "%s\n", $suite);
-echo "Veuillez entrer le nombre e\n";
-fscanf(STDIN, "%s\n", $nbr);
-echo "Veuillez entrer votre nombre m\n";
-fscanf(STDIN, "%s\n", $mumber);
+	echo "Veuillez entrer une suite super croissante\n";
+	fscanf(STDIN, "%s\n", $suite);
+	echo "Veuillez entrer le nombre e\n";
+	fscanf(STDIN, "%s\n", $nbr);
+	echo "Veuillez entrer votre nombre m\n";
+	fscanf(STDIN, "%s\n", $mumber);
 
 	$s = explode(",", $suite);
 	$e = intval($nbr);
@@ -42,7 +26,7 @@ fscanf(STDIN, "%s\n", $mumber);
 	$tbl_trier=[];
 	$tbl_non_trier=[];
 	$d=[];
-	if(true){
+	if(check_suite($s)){
 		for ($i=0; $i != count($s); $i++) {
 			$b = $s[$i]*$e;
 			$c = my_modulo($b,$m);
@@ -67,6 +51,7 @@ fscanf(STDIN, "%s\n", $mumber);
 		$p = $p.$d[$i].",";
 	}
 	echo "P : ".substr($p, 0, -1)."\n";
-	echo "Clé publique : ".substr($t, 0, -1)."\n";
+	echo "Clé publique : ".substr($t, 0, -1)."\n\n";
+	affchoice();
 }
 ?>

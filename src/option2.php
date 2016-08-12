@@ -1,11 +1,16 @@
 <?php
-require_once ('./src/resources.php');
+require_once ('resources.php');
+require_once ('menu.php');
 
  function chiffrage(){
 
 $stdin = fopen("php://stdin", "r");
-echo "Veuillez entrer votre texte à crypter\n";
+echo "Veuillez entrer le texte que vous voulez crypter : \n";
 fscanf(STDIN, "%s\n", $entry);
+if ($entry == null) {
+	chiffrage();
+}
+else {
 echo "Veuillez entrer la clé publique\n";
 fscanf(STDIN, "%s\n", $cle);
 echo "Veuillez entrer le nombre n\n";
@@ -24,6 +29,7 @@ for ($rest; $rest != $n ; $rest++) {
 	$split = str_split($line, $n);
 	cypher($split, $cle, $n);
 }
+}
 
 function cypher($split, $cle, $n){
 	$tab = [];
@@ -38,5 +44,6 @@ function cypher($split, $cle, $n){
 		}
 		$s .= $tab[$i].",";
 	}
-echo "Le message crypté est : ".substr($s, 0,-1)."\n";
+echo "Le message crypté est : ".substr($s, 0,-1)."\n\n";
+affchoice();
 }
