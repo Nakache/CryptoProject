@@ -6,7 +6,7 @@ function my_modulo($int, $n)
     return ($result);
   }
   else {
-    echo "va t'acheter des doigts !\n";
+    echo "Vous n'avez pas entré les bonnes informations ! Regardez la Doc !\n";
     return ($int);
   }
 }
@@ -30,10 +30,10 @@ function inv_modulo($a, $n)
   			return $u;
   		}
   	}
-  	echo "va t'acheter des doigts !\n";
+  	echo "Vous n'avez pas entré les bonnes informations ! Regardez la Doc !\n";
   	return 0;
   }
-  echo "va t'acheter des doigts !\n";
+  echo "Vous n'avez pas entré les bonnes inforamtions ! Regardez la Doc !\n";
     return 0;
 }
 

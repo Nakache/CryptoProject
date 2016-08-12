@@ -2,7 +2,8 @@
 require_once ('resources.php');
 require_once ('menu.php');
 
-function recup_decypher() {
+function decypher() {
+	echo "Vous avez choisi l'option Déchiffrement d'un message\n\n";
 	echo "Veuillez entrer le nombre e\n";
 	fscanf(STDIN, "%s\n", $nbr);
 	echo "Veuillez entrer votre nombre m\n";
@@ -15,11 +16,6 @@ function recup_decypher() {
 	fscanf(STDIN, "%s\n", $secret);
 	echo "Veuillez entrer la clé secrète n\n";
 	fscanf(STDIN, "%s\n", $ainne);
-}
-
-function decypher() {
-	echo "Vous avez choisi l'option Déchiffrement d'un message\n\n";
-	recup_decypher();
 	$p = explode(",", $permut);
 	$msg = explode(",", $cyphe);
 	$v = explode(",", $secret);
