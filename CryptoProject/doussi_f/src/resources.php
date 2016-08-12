@@ -11,6 +11,16 @@ function my_modulo($int, $n)
   }
 }
 
+function check_prems($e, $m)
+{
+  if (my_modulo($e, $m) == "1"){
+    return 1;
+  }
+  else {
+    return 0;
+  }
+}
+
 function inv_modulo($a, $n)
 {
   if(is_int($a) && is_int($n) && $n != 0){
@@ -25,4 +35,25 @@ function inv_modulo($a, $n)
   }
   echo "va t'acheter des doigts !\n";
     return 0;
+}
+
+function check_suite($cut) {
+  $temp = 0;
+
+  if (count($cut) <= 1) {
+    echo "La suite que vous avez entrée n'est pas super-croissante.\n";
+    return 0;
+  }
+  else {
+    for ($i=0; $i != count($cut); $i++) { 
+      if ($temp < $cut[$i]) {
+        $temp = $temp + $cut[$i];
+      }
+      else {
+        echo "La suite que vous avez entrée n'est pas super-croissante.\n\n";
+        return 0;
+      }
+    }
+  }
+  return 1;
 }
