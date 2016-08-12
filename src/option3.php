@@ -9,15 +9,16 @@ function recup_decypher() {
 	fscanf(STDIN, "%s\n", $mumber);
 	echo "Quel est le message crypté ?\n";
 	fscanf(STDIN, "%s\n", $cyphe);
-	echo "Veuillez entrer la permutaion P\n";
+	echo "Veuillez entrer la permutation P\n";
 	fscanf(STDIN, "%s\n", $permut);
-	echo "Veuillez entrer la clé secrete S\n";
+	echo "Veuillez entrer la clé secrète S\n";
 	fscanf(STDIN, "%s\n", $secret);
-	echo "Veuillez entrer la clé secrete n\n";
+	echo "Veuillez entrer la clé secrète n\n";
 	fscanf(STDIN, "%s\n", $ainne);
 }
 
 function decypher() {
+	echo "Vous avez choisi l'option Déchiffrement d'un message\n\n";
 	recup_decypher();
 	$p = explode(",", $permut);
 	$msg = explode(",", $cyphe);
@@ -54,9 +55,7 @@ sort($tri2); //tri 2 = S' trier
 $rslt = [];
 
 for ($o=0; $o != count($tab) ; $o++) {
-	 	//echo("tab : ".$tab[$o]."\n");
 	for ($az=$n - 1 ; $az != -1 ; $az--) {
-	 		//echo("tbl2 : ". $tri[$az] ."\n");
 		if ($tab[$o] >= $tri2[$az]) {
 			$tab[$o] -= $tri2[$az];
 			$rslt[$o] .= "1";

@@ -10,9 +10,9 @@
 
 //Vérifie si c'est une suite croissante
 require_once ('resources.php');
-
 //Transformation en clé publique
 function public_key(){
+	echo "Vous avez choisi l'option génération d'une clé publique\n\n";
 	echo "Veuillez entrer une suite super croissante\n";
 	fscanf(STDIN, "%s\n", $suite);
 	echo "Veuillez entrer le nombre e\n";
